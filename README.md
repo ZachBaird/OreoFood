@@ -5,7 +5,7 @@ This is a .NET 4.7.2 web application. It will follow an N-tier structure.
 
 You need the following tools:
 
-*Visual Studio 2019 Community/Visual Studio Code
+* Visual Studio 2019 Community/Visual Studio Code
 
 That's it!
 
