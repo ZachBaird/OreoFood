@@ -76,3 +76,9 @@ C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\obj\Debug\OreoFood.Web.csproj
 C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\obj\Debug\OreoFood.Web.csproj.CopyComplete
 C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\obj\Debug\OreoFood.Web.dll
 C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\obj\Debug\OreoFood.Web.pdb
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\OreoFood.Data.dll
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\OreoFood.Data.pdb
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\Autofac.dll
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\Autofac.Integration.Mvc.dll
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\Autofac.xml
+C:\Users\bairdz\source\repos\OreoFood\OreoFood.Web\bin\Autofac.Integration.Mvc.xml

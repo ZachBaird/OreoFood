@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using OreoFood.Data.Services;
 using System.Web.Mvc;
 
 namespace OreoFood.Web.Controllers
 {
     public class HomeController : Controller
     {
+        IRestaurantData _db;
+
+        public HomeController(IRestaurantData db)
+        {
+            _db = db;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var model = _db.GetAll();
+
+            return View(model);
         }
 
         public ActionResult About()
