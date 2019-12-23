@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Http;
 
 namespace OreoFood.Web
 {
@@ -10,9 +11,12 @@ namespace OreoFood.Web
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            // Added alongside System.Web.Http to make WebApi Controllers work.
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ContainerConfig.RegisterContainer();
+            // See ContainerConfig for IoC container notes w/ Autofac.
+            ContainerConfig.RegisterContainer(GlobalConfiguration.Configuration);
         }
     }
 }

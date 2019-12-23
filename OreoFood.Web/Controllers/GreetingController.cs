@@ -6,9 +6,13 @@ namespace OreoFood.Web.Controllers
 {
     public class GreetingController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string name)
         {
-            var model = new GreetingViewModel() { Message = ConfigurationManager.AppSettings["message"] };
+            var model = new GreetingViewModel()
+            { 
+                Name = name ?? "no name",
+                Message = ConfigurationManager.AppSettings["message"] 
+            };
 
             return View(model);
         }

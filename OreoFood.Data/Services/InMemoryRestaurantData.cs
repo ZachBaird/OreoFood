@@ -19,9 +19,31 @@ namespace OreoFood.Data.Services
             };
         }
 
+        public void Add(Restaurant newRestaurant)
+        {
+            newRestaurant.Id = restaurants.Max(r => r.Id) + 1;
+            restaurants.Add(newRestaurant);
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(r => r.Name);
+        }
+
+        public Restaurant GetById(int id)
+        {
+            return restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
+        public void Update(Restaurant updRestaurant)
+        {
+            var existing = GetById(updRestaurant.Id);
+
+            if(existing != null)
+            {
+                existing.Name = updRestaurant.Name;
+                existing.Cuisine = updRestaurant.Cuisine;
+            }
         }
     }
 }

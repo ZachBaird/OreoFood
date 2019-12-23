@@ -6,5 +6,9 @@ namespace OreoFood.Data.Services
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetAll();
+        Restaurant GetById(int id);
+
+        void Add(Restaurant newRestaurant);
+        void Update(Restaurant updRestaurant);
     }
 }
