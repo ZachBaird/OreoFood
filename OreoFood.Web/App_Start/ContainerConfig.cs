@@ -25,10 +25,15 @@ namespace OreoFood.Web
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
 
             // Here we register a class type. This allows us to, whenever IRestaurantData is used in the app,
-            //  for that location to receive an InMemoryRestaurantData. We declare this as a singleton instance.
-            builder.RegisterType<InMemoryRestaurantData>()
+            //  for that location to receive an InMemoryRestaurantData/SqlRestaurantData. We declare this as a singleton instance.
+            /*builder.RegisterType<InMemoryRestaurantData>()
                    .As<IRestaurantData>()
-                   .SingleInstance();
+                   .SingleInstance();*/
+
+            builder.RegisterType<SqlRestaurantData>()
+                   .As<IRestaurantData>()
+                   .InstancePerRequest();
+            builder.RegisterType<OreoFoodDbContext>().InstancePerRequest();
 
             // Now we use the builder to build our container, and then tell our application's dependency resolver to 
             //  use this container (wrapped in the Autofac dependency resolver) whenever we inject dependencies.

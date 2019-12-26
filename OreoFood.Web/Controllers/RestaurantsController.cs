@@ -1,9 +1,5 @@
 ﻿using OreoFood.Data.Models;
 using OreoFood.Data.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OreoFood.Web.Controllers
@@ -74,10 +70,32 @@ namespace OreoFood.Web.Controllers
             if(ModelState.IsValid)
             {
                 _db.Update(updatedRestaurant);
+                TempData["Message"] = "You have saved the restaurant";
                 return RedirectToAction("Details", new { id = updatedRestaurant.Id });
             }
 
             return View(updatedRestaurant);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var model = _db.GetById(id);
+
+            if(model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            _db.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

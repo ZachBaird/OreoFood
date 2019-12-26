@@ -10,5 +10,6 @@ namespace OreoFood.Data.Services
 
         void Add(Restaurant newRestaurant);
         void Update(Restaurant updRestaurant);
+        void Delete(int id);
     }
 }

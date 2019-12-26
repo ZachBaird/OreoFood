@@ -25,6 +25,16 @@ namespace OreoFood.Data.Services
             restaurants.Add(newRestaurant);
         }
 
+        public void Delete(int id)
+        {
+            var restaurant = GetById(id);
+
+            if(restaurant != null)
+            {
+                restaurants.Remove(restaurant);
+            }
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(r => r.Name);
